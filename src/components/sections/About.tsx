@@ -14,7 +14,7 @@ export default function About() {
       <div className="relative">
         <h1 className="text-center py-5">What&apos;s in it for you?</h1>
         <div className="relative">
-          <Circle className="justify-center w-72 h-72 ">
+          <Circle className="justify-center w-72 h-72 px-10">
             <h3>
               Chance to represent CPU for an international startup conference
             </h3>
@@ -39,7 +39,7 @@ export default function About() {
           </Circle>
         </div>
       </div>
-      <div className="pt-40 flex flex-col text-center gap-4 w-full sm:px-10 md:px-20 lg:px-40">
+      <div className="pt-40 flex flex-col text-center gap-4 w-full sm:px-10 md:px-16 lg:px-28 max-w-screen-xl">
         <h2>Tracks</h2>
         <div className="grid grid-cols-2 gap-8">
           <Track title="Track 1" description="Description 1" />
