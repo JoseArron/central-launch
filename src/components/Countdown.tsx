@@ -1,50 +1,52 @@
 "use client";
+
 import React, { useEffect, useState } from "react";
-import getTimeLeft from "@/utils/getTimeLeft";
+import { getTimeLeft } from "@/lib/utils";
+import { Time } from "@/lib/types";
 
 interface CountdownProps {
-    endTime: number;
-    }
+  endTime: number;
+}
 
-const Countdown = ({
-  endTime,
-}: CountdownProps) => {
-    const [timeLeft, setTimeLeft] = useState(() => getTimeLeft(endTime));
-    const [loading, setLoading] = useState(true);
+const Countdown = ({ endTime }: CountdownProps) => {
+  const initialTimeLeft: Time = {
+    days: "00",
+    hours: "00",
+    minutes: "00",
+    seconds: "00",
+  };
 
-	useEffect(() => {
-		const timer = setInterval(() => {
-			setTimeLeft(getTimeLeft(endTime));
-            setLoading(false);
-		}, 1000);
+  const [timeLeft, setTimeLeft] = useState(initialTimeLeft);
 
-		return () => {
-			clearInterval(timer);
-		};
-	}, []);
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTimeLeft(getTimeLeft(endTime));
+    }, 1000);
 
-    if (loading) {
-        return <div>Loading...</div>;
-    }
-    
-    return (
-        <div>
-            <div className="flex w-full flex-row justify-end m-auto gap-6">
-                {Object.entries(timeLeft).map((time) => {
-                    const label = time[0];
-                    const value = time[1];
-                    return (
-                        <div className='flex flex-col items-center justify-center mt-6' key={label}>
-                            <div className='text-neutral-950 bg-white p-4 font-bold rounded-md mb-2'>
-                                {value}
-                            </div>
-                            {label}
-                        </div>
-                    );
-                })}
-            </div>
-        </div>
-        );
+    return () => {
+      clearInterval(timer);
     };
+  });
+
+  return (
+    <div className="flex flex-row m-auto gap-6">
+      {Object.entries(timeLeft).map((time) => {
+        const label = time[0];
+        const value = time[1];
+        return (
+          <div
+            className="flex flex-col items-center justify-center mt-6"
+            key={label}
+          >
+            <div className="text-neutral-950 bg-white p-4 font-bold rounded-md mb-2">
+              {value}
+            </div>
+            {label}
+          </div>
+        );
+      })}
+    </div>
+  );
+};
 
 export default Countdown;

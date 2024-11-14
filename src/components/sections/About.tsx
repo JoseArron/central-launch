@@ -3,7 +3,10 @@ import Track from "../Track";
 
 export default function About() {
   return (
-    <div className="flex flex-col items-center justify-center py-12 px-4 md:px-12 lg:px-24 xl:px-36 gap-20">
+    <div
+      id="about"
+      className="flex flex-col items-center justify-center py-12 px-4 md:px-12 lg:px-24 xl:px-36 gap-20"
+    >
       <div>
         <h1>About</h1>
         <h3 className="w-1/2">

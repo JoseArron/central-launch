@@ -8,7 +8,7 @@ import FAQs from "@/components/sections/FAQs";
 
 export default function Home() {
   return (
-    <div className="min-h-screen w-full flex flex-col">
+    <div className="min-h-screen w-full flex flex-col px-8 lg:px-12 xl:px-16">
       <Header />
       <Landing />
       <About />
