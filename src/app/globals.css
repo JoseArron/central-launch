@@ -3,46 +3,45 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #e2edff;
+  --foreground: #4e0666;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-fredoka);
 }
 
 @layer base {
   h1 {
     font-size: 2rem;
+    font-weight: 600;
   }
 
   h2 {
     font-size: 1.5rem;
+    font-weight: 500;
   }
 
   h3 {
     font-size: 1.17rem;
+    font-weight: 400;
   }
 
   h4 {
     font-size: 1rem;
+    font-weight: 400;
   }
 
   h5 {
     font-size: 0.83rem;
+    font-weight: 300;
   }
 
   h6 {
     font-size: 0.67rem;
+    font-weight: 300;
   }
 }
 
@@ -50,5 +49,4 @@ body {
   .text-balance {
     text-wrap: balance;
   }
-
 }

@@ -25,7 +25,10 @@ const faqs: FaqsProps = [
 
 export default function FAQs() {
   return (
-    <div className="flex flex-col items-center justify-center py-12 px-4 md:px-12 lg:px-24 xl:px-36 w-full gap-5">
+    <div
+      id="faqs"
+      className="flex flex-col items-center justify-center py-12 px-4 md:px-12 lg:px-24 xl:px-36 w-full gap-5"
+    >
       <h1>FAQs</h1>
       <div className="flex flex-col gap-4 items-center justify-center w-full max-w-screen-sm">
         {faqs.map(({ question, answer }, idx) => (
