@@ -20,7 +20,11 @@ const config: Config = {
         wave: "wave 0.5s ease-in-out infinite",
       },
       colors: {
-        sky: "#E2EDFF",
+        blue: "#4852F5",
+        lightBlue: "#5CC3F8",
+        yellow: "#FFD900",
+        gold: "#FFC400",
+        sky: "var(--background)",
         background: "var(--background)",
         foreground: "var(--foreground)",
       },

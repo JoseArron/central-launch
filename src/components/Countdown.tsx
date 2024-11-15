@@ -12,8 +12,8 @@ const Countdown = ({ endTime }: CountdownProps) => {
   const initialTimeLeft: Time = {
     days: "00",
     hours: "00",
-    minutes: "00",
-    seconds: "00",
+    mins: "00",
+    secs: "00",
   };
 
   const [timeLeft, setTimeLeft] = useState(initialTimeLeft);
@@ -29,16 +29,16 @@ const Countdown = ({ endTime }: CountdownProps) => {
   });
 
   return (
-    <div className="flex flex-row m-auto gap-6">
+    <div className="flex flex-row gap-6 justify-center text-2xl">
       {Object.entries(timeLeft).map((time) => {
         const label = time[0];
         const value = time[1];
         return (
           <div
-            className="flex flex-col items-center justify-center mt-6"
+            className="flex flex-col justify-center font-semibold"
             key={label}
           >
-            <div className="text-neutral-950 bg-white p-4 font-bold rounded-md mb-2">
+            <div className="bg-foreground text-white p-4 rounded-md mb-2">
               {value}
             </div>
             {label}
