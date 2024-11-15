@@ -1,6 +1,6 @@
 export type Time = {
   days: string;
   hours: string;
-  minutes: string;
-  seconds: string;
+  mins: string;
+  secs: string;
 };

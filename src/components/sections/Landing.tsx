@@ -1,79 +1,85 @@
-import Image from "next/image";
-
+"use client";
+import { useRef } from "react";
 import Countdown from "../Countdown";
+import WavyText from "../WavyText";
 
-import branches from "../../app/images/branches.svg";
-import nest from "../../app/images/nest.svg";
-import leaves from "../../app/images/leaves.svg";
-import cloud1 from "../../app/images/cloud-1.svg";
-import cloud2 from "../../app/images/cloud-2.svg";
-import sun from "../../app/images/sun.svg";
-import bg1 from "../../app/images/bg-1.svg";
-import bg2 from "../../app/images/bg-2.svg";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 export default function Landing() {
-  return (
-    <div className="flex flex-row w-full h-screen py-8">
-      <div className="flex flex-1 relative">
-        <div className="absolute w-[200%] h-screen -z-20">
-          <Image
-            src={bg2}
-            alt="bg2"
-            className="absolute bottom-36 object-cover"
-          />
-          <Image
-            src={bg1}
-            alt="bg1"
-            className="absolute bottom-0 object-cover"
-          />
-          <div className="flex justify-center h-full">
-            <Image src={sun} alt="sun" className="absolute size-3/4 top-24" />
-          </div>
-        </div>
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end start"],
+  });
 
-        <div className="absolute w-[200%] h-screen -z-10">
-          <Image
-            src={cloud1}
-            alt="cloud1"
-            className="absolute size-64 top-36 left-0"
-          />
-          <Image
-            src={cloud2}
-            alt="cloud2"
-            className="absolute size-64 top-2/4 left-2/4"
-          />
-          <Image
-            src={cloud1}
-            alt="cloud1"
-            className="absolute size-64 top-96 left-3/4"
-          />
-          <Image
-            src={cloud2}
-            alt="cloud2"
-            className="absolute size-64 top-28 left-1/4"
-          />
-        </div>
-        <div className="h-screen -z-10 top-1/2">
-          <Image src={branches} alt="branches" className="absolute size-1/2 " />
-          <Image src={nest} alt="nest" className="absolute size-1/2" />
-          <Image src={leaves} alt="leaves" className="absolute size-1/2" />
-        </div>
+  const mountain2Y = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+  const mountain1Y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+  const sunY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+  const cloud3Y = useTransform(scrollYProgress, [0, 1], ["0%", "75%"]);
+  const cloud2Y = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+  const branchesY = useTransform(scrollYProgress, [0, 1], ["0%", "125%"]);
+  const nestY = useTransform(scrollYProgress, [0, 1], ["0%", "150%"]);
+  const leavesY = useTransform(scrollYProgress, [0, 1], ["0%", "125%"]);
+  const textY = useTransform(scrollYProgress, [0, 1], ["0%", "150%"]);
+
+  return (
+    <div ref={ref} className="flex w-full h-screen py-8">
+      <div className="hidden flex-1 md:flex">
+        <motion.div
+          className="absolute inset-0 -z-50 bg-[url('/assets/mountain-2.png')] bg-bottom bg-cover"
+          style={{ y: mountain2Y }}
+        />
+        <motion.div
+          className="absolute inset-0 -z-40 bg-[url('/assets/mountain-1.png')] bg-bottom bg-cover"
+          style={{ y: mountain1Y }}
+        />
+        <motion.div
+          className="absolute inset-0 -z-30 bg-[url('/assets/sun.png')] bg-bottom bg-cover"
+          style={{ y: sunY }}
+        />
+        <motion.div
+          className="absolute inset-0 -z-30 bg-[url('/assets/cloud-3.png')] bg-bottom bg-cover"
+          style={{ y: cloud3Y }}
+        />
+        <motion.div
+          className="absolute inset-0 -z-30 bg-[url('/assets/cloud-2.png')] bg-bottom bg-cover"
+          style={{ y: cloud2Y }}
+        />
+        <motion.div
+          className="absolute inset-0 -z-20 bg-[url('/assets/branches.png')] bg-bottom bg-cover"
+          style={{ y: branchesY }}
+        />
+        <motion.div
+          className="absolute inset-0 -z-10 bg-[url('/assets/nest.png')] bg-bottom bg-cover"
+          style={{ y: nestY }}
+        />
+        <motion.div
+          className="absolute inset-0 -z-10 bg-[url('/assets/leaves.png')] bg-bottom bg-cover"
+          style={{ y: leavesY }}
+        />
       </div>
-      <div className="flex flex-1 flex-col text-center items-center justify-center gap-10">
+      <motion.div
+        className="flex flex-1 flex-col text-center items-center justify-center gap-10"
+        style={{ y: textY }}
+      >
         <div>
-          <h1 className="sm:text-6xl md:text-7xl lg:text-8xl">
-            Central Launch
-          </h1>
-          <h2>November 22 - 23, 2024</h2>
+          <WavyText
+            text={"Central Launch"}
+            className="text-7xl lg:text-8xl px-4 font-semibold"
+          />
+          <h2 className="text-3xl lg:text-4xl">November 22 - 23, 2024</h2>
         </div>
-        <div>
-          <h2 className="sm:text-4xl md:text-5xl lg:text-6xl">Launching in</h2>
+        <div className="flex flex-col justify-center gap-6">
+          <WavyText
+            text={"Launching in"}
+            className="text-4xl lg:text-5xl font-medium"
+          />
           <Countdown endTime={new Date("2024-11-22").getTime()} />
-          <button className="text-neutral-950 bg-white p-4 font-bold rounded-md mt-2">
-            Join the launch
+          <button className="bg-foreground text-white px-4 py-2 font-bold rounded-full">
+            <WavyText text={"Join the Launch"} />
           </button>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }

@@ -9,7 +9,7 @@ export const getTimeLeft = (endTime: number) => {
   return {
     days: days.toString().padStart(2, "0"),
     hours: hours.toString().padStart(2, "0"),
-    minutes: minutes.toString().padStart(2, "0"),
-    seconds: seconds.toString().padStart(2, "0"),
+    mins: minutes.toString().padStart(2, "0"),
+    secs: seconds.toString().padStart(2, "0"),
   } as Time;
 };
