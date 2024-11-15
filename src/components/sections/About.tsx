@@ -5,7 +5,7 @@ export default function About() {
   return (
     <div
       id="about"
-      className="bg-white flex flex-col items-center justify-center py-12 px-4 md:px-12 lg:px-24 xl:px-36 gap-20"
+      className="bg-white flex flex-col items-center justify-center py-12 px-4 md:px-12 lg:px-24 xl:px-36 gap-20 z-10"
     >
       <div>
         <h1>About</h1>

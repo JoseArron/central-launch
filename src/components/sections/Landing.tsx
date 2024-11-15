@@ -59,7 +59,7 @@ export default function Landing() {
         />
       </div>
       <motion.div
-        className="flex flex-1 flex-col text-center items-center justify-center gap-10 -z-10 "
+        className="flex flex-1 flex-col text-center items-center justify-center gap-10"
         style={{ y: textY }}
       >
         <div>
