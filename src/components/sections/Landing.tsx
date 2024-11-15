@@ -4,6 +4,7 @@ import Countdown from "../Countdown";
 import WavyText from "../WavyText";
 
 import { motion, useScroll, useTransform } from "framer-motion";
+import Link from "next/link";
 
 export default function Landing() {
   const ref = useRef(null);
@@ -75,9 +76,12 @@ export default function Landing() {
             className="text-4xl lg:text-5xl font-medium"
           />
           <Countdown endTime={new Date("2024-11-22").getTime()} />
-          <button className="bg-foreground text-white px-4 py-2 font-bold rounded-full">
-            <WavyText text={"Join the Launch"} />
-          </button>
+          <Link
+            className="bg-foreground text-white px-8 py-4 font-bold transition-all duration-500 rounded-full hover:rotate-3 hover:scale-105"
+            href={"https://forms.gle/jcsVNcpWT7zfSgMB8"}
+          >
+            <WavyText text={"Join the Launch"} className="text-4xl" />
+          </Link>
         </div>
       </motion.div>
     </div>
