@@ -20,13 +20,13 @@ export default function Speakers() {
   return (
     <div
       id="speakers"
-      className="bg-sky flex flex-col items-center justify-center py-12 px-12 md:px-28 lg:px-52 xl:px-60  gap-6"
+      className="bg-sky flex flex-col items-center justify-center py-12 px-12 md:px-28 lg:px-52 xl:px-60 gap-4"
     >
       <WavyText
         text={"Speakers"}
         className="text-white text-4xl font-medium bg-foreground p-4 rounded-full"
       />
-      <div className="flex flex-col gap-2.5"></div>
+      <div className="flex flex-col gap-0"></div>
       {speakers.map(({ imgSrc, name }, index) => (
         <Speaker
           key={index}
