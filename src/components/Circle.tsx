@@ -9,7 +9,7 @@ const Circle = ({
 }) => {
   return (
     <div
-      className={`w-20 h-20 bg-purple-950 rounded-full flex items-center justify-center text-center ${className}`}
+      className={`bg-purple-950 h-20 w-20 flex items-center justify-center text-center ${className} rounded-full `}
     >
       {children}
     </div>
