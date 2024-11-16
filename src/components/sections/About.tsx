@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Circle from "../Circle";
 import Track from "../Track";
 import { motion } from "motion/react";
@@ -114,9 +115,9 @@ export default function About() {
           </Circle>
         </div>
       </div>
-      <div className="pt-40 flex flex-col text-center gap-4 w-full sm:px-10 md:px-16 lg:px-28 max-w-screen-lg">
+      <div className="pt-40 flex flex-col text-center gap-4 w-full sm:px-20 md:px-16 lg:px-28 max-w-screen-lg">
         <h2>Tracks</h2>
-        <div className="grid grid-cols-2 gap-8 text-white">
+        <div className="flex flex-col md:grid md:grid-cols-2 md:max-w-none gap-8 text-white relative">
           <Track title="Track 1" description="Description 1" />
           <Track title="Track 2" description="Description 2" />
           <Track title="Track 3" description="Description 3" />
