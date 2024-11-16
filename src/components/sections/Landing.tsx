@@ -3,7 +3,7 @@ import { useRef } from "react";
 import Countdown from "../Countdown";
 import WavyText from "../WavyText";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform } from "motion/react";
 import Link from "next/link";
 
 export default function Landing() {
