@@ -34,8 +34,8 @@ export default function FAQs() {
     offset: ["start end", "end start"],
   });
 
-  const leafGroup1Y = useTransform(scrollYProgress, [0, 1], ["0vh", "20vh"]);
-  const leafGroup2Y = useTransform(scrollYProgress, [0, 1], ['0vh', "50vh"]);
+  const leafGroup1Y = useTransform(scrollYProgress, [0, 1], ["0vh", "60vh"]);
+  const leafGroup2Y = useTransform(scrollYProgress, [0, 1], ['0vh', "20vh"]);
   const leafGroup3Y = useTransform(scrollYProgress, [0, 1], ["0vh", "40vh"]);
   const leafGroup4Y = useTransform(scrollYProgress, [0, 1], ["0vh", "90vh"]);
 
