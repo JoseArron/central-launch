@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import ScheduleItem from '../ScheduleItem'; 
 
+
 const Schedules: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'day1' | 'day2'>('day1');
 
@@ -69,22 +70,40 @@ const Schedules: React.FC = () => {
 
   return (
     <div className="flex flex-col items-center justify-center py-16 px-4 md:px-24 lg:px-24 xl:px-36 bg-[#E2EDFF]">
-      <text className='mb-8 text-6xl font-semibold'>Schedule</text>
-      <div className="flex space-x-4 mb-4">
-        <button
-          className={`py-3 px-36 font-semibold rounded-lg transition-colors duration-300 ${activeTab === 'day1' ? 'bg-[#87BC38] text-white' : 'bg-white text-[#87BC38] border border-[#87BC38]'}`}
-          onClick={() => setActiveTab('day1')}
-        >
-          Day 1
-        </button>
-        <button
-          className={`py-3 px-36 font-semibold rounded-lg transition-colors duration-300 ${activeTab === 'day2' ? 'bg-[#87BC38] text-white' : "bg-white text-[#87BC38] border border-[#87BC38] "}`}
-          onClick={() => setActiveTab('day2')}
-        >
-          Day 2
-        </button>
+      <text className='mb-8 text-5xl font-semibold'>Schedules</text>
+      <div className="flex justify-center space-x-4 mb-5 w-full">
+        <div className="relative"> 
+          <button
+            className={`py-3 max-w-xs min-w-48 font-semibold rounded-lg transition-colors duration-300 ${activeTab === 'day1' ? 'bg-[#87BC38] text-white' : 'bg-white text-[#87BC38] border border-[#87BC38]'}`}
+            onClick={() => setActiveTab('day1')}
+          >
+            Day 1
+          </button>
+          {activeTab === 'day1' && (
+            <img
+              src="/assets/active.png" 
+              alt="Active Tab Image"
+              className="absolute top-4 left-0 w-full max-w-xs mx-auto object-cover" 
+            />
+          )}
+        </div>
+        <div className="relative"> 
+          <button
+            className={`py-3 max-w-xs min-w-48 font-semibold rounded-lg transition-colors duration-300 ${activeTab === 'day2' ? 'bg-[#87BC38] text-white' : "bg-white text-[#87BC38] border border-[#87BC38] "}`}
+            onClick={() => setActiveTab('day2')}
+          >
+            Day 2
+          </button>
+          {activeTab === 'day2' && (
+            <img
+              src="/assets/active.png" 
+              alt="Active Tab Image"
+              className="absolute top-4 left-0 w-full max-w-xs mx-auto object-cover" 
+            />
+          )}
+        </div>
       </div>
-      <div className="w-2/4 mx-auto rounded-lg shadow-lg p-4 bg-white"> 
+      <div className="w-full max-w-3xl mx-auto rounded-lg shadow-lg p-4 bg-white"> 
         {renderContent()}
       </div>
     </div>
