@@ -3,7 +3,7 @@ import { useRef } from "react";
 import Countdown from "../Countdown";
 import WavyText from "../WavyText";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform } from "motion/react";
 import Link from "next/link";
 
 export default function Landing() {
@@ -25,37 +25,37 @@ export default function Landing() {
 
   return (
     <div ref={ref} className="flex w-full h-screen py-8">
-      <div className="hidden flex-1 md:flex">
+      <div className="flex-grow-0 flex-1 md:flex md:flex-auto">
         <motion.div
-          className="absolute inset-0 -z-50 bg-[url('/assets/mountain-2.png')] bg-bottom bg-cover"
+          className="absolute inset-0 -z-50 bg-[url('/assets/mountain-2.png')] bg-bottom bg-contain bg-no-repeat sm:bg-cover"
           style={{ y: mountain2Y }}
         />
         <motion.div
-          className="absolute inset-0 -z-40 bg-[url('/assets/mountain-1.png')] bg-bottom bg-cover"
+          className="absolute inset-0 -z-40 bg-[url('/assets/mountain-1.png')] bg-bottom bg-contain bg-no-repeat sm:bg-cover"
           style={{ y: mountain1Y }}
         />
         <motion.div
-          className="absolute inset-0 -z-30 bg-[url('/assets/sun.png')] bg-bottom bg-cover"
+          className="absolute inset-0 -z-30 bg-[url('/assets/sun.png')] bg-bottom bg-contain bg-no-repeat sm:bg-cover"
           style={{ y: sunY }}
         />
         <motion.div
-          className="absolute inset-0 -z-30 bg-[url('/assets/cloud-3.png')] bg-bottom bg-cover"
+          className="absolute inset-0 -z-30 bg-[url('/assets/cloud-3.png')] bg-bottom bg-contain bg-no-repeat sm:bg-cover"
           style={{ y: cloud3Y }}
         />
         <motion.div
-          className="absolute inset-0 -z-30 bg-[url('/assets/cloud-2.png')] bg-bottom bg-cover"
+          className="absolute inset-0 -z-30 bg-[url('/assets/cloud-2.png')] bg-bottom bg-contain bg-no-repeat sm:bg-cover"
           style={{ y: cloud2Y }}
         />
         <motion.div
-          className="absolute inset-0 -z-20 bg-[url('/assets/branches.png')] bg-bottom bg-cover"
+          className="absolute inset-0 -z-20 bg-[url('/assets/branches.png')] bg-bottom bg-contain bg-no-repeat sm:bg-cover"
           style={{ y: branchesY }}
         />
         <motion.div
-          className="absolute inset-0 -z-10 bg-[url('/assets/nest.png')] bg-bottom bg-cover"
+          className="absolute inset-0 -z-10 bg-[url('/assets/nest.png')] bg-bottom bg-contain bg-no-repeat sm:bg-cover"
           style={{ y: nestY }}
         />
         <motion.div
-          className="absolute inset-0 -z-10 bg-[url('/assets/leaves.png')] bg-bottom bg-cover"
+          className="absolute inset-0 -z-10 bg-[url('/assets/leaves.png')] bg-bottom bg-contain bg-no-repeat sm:bg-cover"
           style={{ y: leavesY }}
         />
       </div>
@@ -68,7 +68,9 @@ export default function Landing() {
             text={"Central Launch"}
             className="text-7xl lg:text-8xl px-4 font-semibold"
           />
-          <h2 className="text-3xl lg:text-4xl">November 22 - 23, 2024</h2>
+          <h2 className="text-2xl md:text-3xl lg:text-4xl">
+            November 22 - 23, 2024
+          </h2>
         </div>
         <div className="flex flex-col justify-center gap-6">
           <WavyText

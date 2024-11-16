@@ -93,8 +93,9 @@ export default function About() {
             <Image fill src={cloud} alt="img" className="object-contain" />
           </motion.div>
           <motion.div
-          style={{ y: cloud4Y }}
-          className="absolute w-96 h-96 -bottom-20 left-32">
+            style={{ y: cloud4Y }}
+            className="absolute w-96 h-96 -bottom-20 left-32"
+          >
             <Image fill src={cloud} alt="img" className="object-contain" />
           </motion.div>
         </div>
