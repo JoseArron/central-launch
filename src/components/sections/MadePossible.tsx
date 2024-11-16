@@ -80,7 +80,7 @@ export default function MadePossible() {
     },
     hidden: {
       opacity: 0,
-      y: 100,
+      y: 20,
     },
   };
   return (
