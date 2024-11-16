@@ -10,7 +10,7 @@ const Schedules: React.FC = () => {
     switch (activeTab) {
       case 'day1':
         return (
-          <div className="w-full overflow-x-auto">
+          <div className="w-full overflow-x-auto overflow-y-auto max-h-96">
             <table className="w-full text-lg text-black border-collapse">
               <thead>
                 <tr>
@@ -42,7 +42,7 @@ const Schedules: React.FC = () => {
         );
       case 'day2':
         return (
-          <div className="w-full overflow-x-auto">
+          <div className="w-full overflow-x-auto overflow-y-auto max-h-96">
             <table className="w-full text-lg text-black border-collapse">
               <thead>
                 <tr>
@@ -72,19 +72,19 @@ const Schedules: React.FC = () => {
       <text className='mb-8 text-6xl font-semibold'>Schedule</text>
       <div className="flex space-x-4 mb-4">
         <button
-          className={`py-3 px-28 font-semibold rounded-lg transition-colors duration-300 ${activeTab === 'day1' ? 'bg-[#87BC38] text-white' : 'bg-white text-[#87BC38] border border-[#87BC38]'}`}
+          className={`py-3 px-36 font-semibold rounded-lg transition-colors duration-300 ${activeTab === 'day1' ? 'bg-[#87BC38] text-white' : 'bg-white text-[#87BC38] border border-[#87BC38]'}`}
           onClick={() => setActiveTab('day1')}
         >
           Day 1
         </button>
         <button
-          className={`py-3 px-28 font-semibold rounded-lg transition-colors duration-300 ${activeTab === 'day2' ? 'bg-[#87BC38] text-white' : "bg-white text-[#87BC38] border border-[#87BC38] "}`}
+          className={`py-3 px-36 font-semibold rounded-lg transition-colors duration-300 ${activeTab === 'day2' ? 'bg-[#87BC38] text-white' : "bg-white text-[#87BC38] border border-[#87BC38] "}`}
           onClick={() => setActiveTab('day2')}
         >
           Day 2
         </button>
       </div>
-      <div className="max-w-7xl mx-auto rounded-lg shadow-lg p-4 bg-white"> 
+      <div className="w-2/4 mx-auto rounded-lg shadow-lg p-4 bg-white"> 
         {renderContent()}
       </div>
     </div>
