@@ -11,7 +11,7 @@ export default function Header() {
   };
 
   return (
-    <header className="absolute top-0 left-0 px-10 py-4 w-full z-10">
+    <header className="absolute top-0 left-0 px-5 lg:px-10 py-2 lg:py-4 w-full z-10">
       <div className="flex flex-row items-center justify-between">
         <div className="flex items-center font cursor-pointer">
           <Image
@@ -19,12 +19,8 @@ export default function Header() {
             alt="Central Launch"
             width={16}
             height={16}
-            className="size-16"
+            className="size-12 md:size-14 xl:size-16"
           />
-          {/* <WavyText
-            text="Central Launch"
-            className="text-nowrap font-semibold"
-          /> */}
         </div>
         <div className="hidden sm:flex flex-row items-center gap-12">
           <button onClick={() => scrollToSection("about")}>

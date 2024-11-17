@@ -12,10 +12,10 @@ const FAQ = ({ question, answer }: FAQProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="flex flex-col bg-neutral-800 w-full rounded-md px-5 mb-4">
+    <div className="flex flex-col bg-purple-950 w-full text-neutral-50 rounded-md px-5 mb-4">
       <div>
         <button
-          className="w-full text-start text-neutral-100 p-5 rounded-md flex justify-between items-center"
+          className="w-full text-start p-5 rounded-md flex justify-between items-center"
           onClick={() => setIsOpen(!isOpen)}
         >
           <p>{question}</p>

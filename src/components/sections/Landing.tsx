@@ -24,7 +24,10 @@ export default function Landing() {
   const textY = useTransform(scrollYProgress, [0, 1], ["0%", "150%"]);
 
   return (
-    <div ref={ref} className="flex w-full h-screen py-8">
+    <div
+      ref={ref}
+      className="flex w-full h-screen py-8 relative overflow-hidden"
+    >
       <div className="flex-grow-0 flex-1 md:flex md:flex-auto">
         <motion.div
           className="absolute inset-0 -z-50 bg-[url('/assets/mountain-2.png')] bg-bottom bg-contain bg-no-repeat sm:bg-cover"
@@ -58,19 +61,37 @@ export default function Landing() {
           className="absolute inset-0 -z-10 bg-[url('/assets/leaves.png')] bg-bottom bg-contain bg-no-repeat sm:bg-cover"
           style={{ y: leavesY }}
         />
+        <motion.div
+          className="absolute inset-0 -z-10 bg-[url('/assets/bird.png')] bg-bottom bg-contain bg-no-repeat sm:bg-cover"
+          initial={{ x: 0, y: 0, rotate: 0 }}
+          animate={{
+            x: [0, 50, -30, 20, 0],
+            y: [0, -20, -10, -30, 0],
+            rotate: [0, 10, -15, 20, 0],
+          }}
+          transition={{
+            duration: 6,
+            ease: "easeInOut",
+            repeat: Infinity,
+            repeatType: "loop",
+          }}
+        />
       </div>
       <motion.div
-        className="flex flex-1 flex-col text-center items-center justify-center gap-10"
+        className="flex flex-1 flex-col text-center items-center justify-center sm:text-right sm:items-end gap-8 px-10 sm:px-24 md:px-36 lg:px-44 xl:px-52 pt-2 lg:pt-4"
         style={{ y: textY }}
       >
         <div>
           <WavyText
-            text={"Central Launch"}
-            className="text-7xl lg:text-8xl px-4 font-semibold"
+            text={"Launch Central"}
+            className="text-7xl lg:text-8xl px-4 font-semibold rounded-lg max-w-fit"
           />
           <h2 className="text-2xl md:text-3xl lg:text-4xl">
-            November 22 - 23, 2024
+            Nov 22 - 23, 2024
           </h2>
+          <h3 className="text-lg md:text-xl lg:text-2xl">
+            American Corner, Henry Luce Library, CPU
+          </h3>
         </div>
         <div className="flex flex-col justify-center gap-6">
           <WavyText
@@ -79,7 +100,7 @@ export default function Landing() {
           />
           <Countdown endTime={new Date("2024-11-22").getTime()} />
           <Button
-            text="Join the launch"
+            text="Join the Launch"
             link="https://forms.gle/jcsVNcpWT7zfSgMB8"
           />
         </div>
