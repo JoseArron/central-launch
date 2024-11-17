@@ -6,6 +6,7 @@ import Track from "../Track";
 import { motion, useScroll, useTransform } from "motion/react";
 import cloud from "@/../public/assets/cloud.svg";
 import { useRef } from "react";
+import WavyText from "../WavyText";
 
 const appearVariants = {
   hidden: {
@@ -93,8 +94,9 @@ export default function About() {
             <Image fill src={cloud} alt="img" className="object-contain" />
           </motion.div>
           <motion.div
-          style={{ y: cloud4Y }}
-          className="absolute w-96 h-96 -bottom-20 left-32">
+            style={{ y: cloud4Y }}
+            className="absolute w-96 h-96 -bottom-20 left-32"
+          >
             <Image fill src={cloud} alt="img" className="object-contain" />
           </motion.div>
         </div>
@@ -110,7 +112,10 @@ export default function About() {
         viewport={{ once: true }}
         className="text-center self-center"
       >
-        <h1>About</h1>
+        <WavyText
+          text={"About"}
+          className="text-white text-4xl font-medium bg-foreground p-4 rounded-full max-w-fit justify-self-center mb-4"
+        />
         <h3 className="max-w-md self-center">
           A two-day immersive experience for Centralian students to ideate,
           develop, and pitch startup ideas.

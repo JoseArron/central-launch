@@ -9,7 +9,7 @@ interface HelpersProps {
 
 const Helpers = ({ logosrc, title }: HelpersProps) => {
   return (
-    <div className="rounded-md bg-neutral-800 px-5 py-2 flex items-center justify-center w-full min-h-32">
+    <div className="rounded-md bg-violet-950 px-5 py-2 flex items-center justify-center w-full min-h-32">
       {logosrc}
       <h3 className="w-full ">{title}</h3>
     </div>

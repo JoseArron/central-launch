@@ -5,6 +5,7 @@ import Speakers from "@/components/sections/Speakers";
 import Schedules from "@/components/sections/Schedules";
 import MadePossible from "@/components/sections/MadePossible";
 import FAQs from "@/components/sections/FAQs";
+import Footer from "@/components/layout/Footer";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <Schedules />
       <MadePossible />
       <FAQs />
+      <Footer />
     </div>
   );
 }

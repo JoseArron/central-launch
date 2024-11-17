@@ -1,5 +1,6 @@
 "use client";
 import FAQ from "../FAQ";
+import WavyText from "../WavyText";
 import { motion, useScroll, useTransform } from "motion/react";
 import Leaf, { LeafType } from "../Leaf";
 import { useRef } from "react";
@@ -34,7 +35,7 @@ export default function FAQs() {
     offset: ["start end", "end start"],
   });
 
-  const leafGroup1Y = useTransform(scrollYProgress, [0, 1], ["0vh", "60vh"]);
+  const leafGroup1Y = useTransform(scrollYProgress, [0, 1], [0, 400]);
   const leafGroup2Y = useTransform(scrollYProgress, [0, 1], ['0vh', "20vh"]);
   const leafGroup3Y = useTransform(scrollYProgress, [0, 1], ["0vh", "40vh"]);
   const leafGroup4Y = useTransform(scrollYProgress, [0, 1], ["0vh", "90vh"]);
@@ -42,7 +43,7 @@ export default function FAQs() {
   return (
     <div
       id="faqs"
-      className="flex flex-col items-center justify-center py-12 px-4 md:px-12 lg:px-24 xl:px-36 w-full gap-5 relative"
+      className="flex flex-col items-center justify-center py-12 px-4 md:px-12 lg:px-24 xl:px-36 w-full gap-5 z-10 relative"
       ref={ref}
     >
       <div className="-z-10 relative w-full">
@@ -63,7 +64,10 @@ export default function FAQs() {
           <Leaf className={"w-20 h-20 left-20 top-10 rotate-45"} leafType={LeafType.dark} />
         </motion.div>
       </div>
-      <h1>FAQs</h1>
+      <WavyText
+        text={"FAQs"}
+        className="text-white text-4xl font-medium bg-foreground p-4 rounded-full max-w-fit justify-self-center mb-4"
+      />
       <div className="flex flex-col gap-4 items-center justify-center w-full max-w-screen-sm">
         {faqs.map(({ question, answer }, idx) => (
           <FAQ question={question} answer={answer} key={idx} />
