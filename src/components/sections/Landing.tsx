@@ -90,7 +90,7 @@ export default function Landing() {
             Nov 22 - 23, 2024
           </h2>
           <h3 className="text-lg md:text-xl lg:text-2xl">
-            Henry Luce Library, American Corner
+            American Corner, Henry Luce Library, CPU
           </h3>
         </div>
         <div className="flex flex-col justify-center gap-6">

@@ -4,125 +4,45 @@ import React, { useState } from "react";
 import ScheduleItem from "../ScheduleItem";
 import WavyText from "../WavyText";
 
+const schedules = {
+  day1: [
+    { time: "7:30 AM", activity: "Registration and Networking" },
+    { time: "8:15 AM", activity: "Opening Program" },
+    {
+      time: "8:30 AM",
+      activity: "Talk Show",
+    },
+    { time: "9:00 AM", activity: "Participant Introduction" },
+    { time: "9:30 AM", activity: "Team Formation" },
+    {
+      time: "10:15 AM",
+      activity: "Creativity and Opportunity Recognition Lecture",
+    },
+    { time: "10:30 AM", activity: "Ideation Workshop" },
+    { time: "11:15 AM", activity: "1st Half Idea Presentation" },
+    { time: "12:00 NN", activity: "Lunch Break" },
+    { time: "1:00 PM", activity: "2nd Half Idea Presentation" },
+    { time: "1:30 PM", activity: "Preto-typing Activity" },
+    { time: "3:30 PM", activity: "Product Pitching" },
+    { time: "4:30 PM", activity: "Rejection Therapy Activity" },
+  ],
+  day2: [
+    { time: "8:00 AM", activity: "Registration and Networking" },
+    { time: "8:30 AM", activity: "Panel Discussion: Why Startup fails?" },
+    { time: "9:00 AM", activity: "Rejection Therapy Activity Presentation" },
+    {
+      time: "10:30 AM",
+      activity: "Creating a good pitch through storytelling",
+    },
+    { time: "11:30 AM", activity: "Prototyping Activity" },
+    { time: "12:00 NN", activity: "Working Lunch" },
+    { time: "3:00 PM", activity: "Culminating activity" },
+    { time: "5:00 PM", activity: "Awarding of Certificates" },
+  ],
+};
+
 const Schedules: React.FC = () => {
   const [activeTab, setActiveTab] = useState<"day1" | "day2">("day1");
-
-  const renderContent = () => {
-    switch (activeTab) {
-      case "day1":
-        return (
-          <div className="w-full overflow-x-auto overflow-y-auto max-h-96">
-            <table className="w-full text-lg border-collapse">
-              <thead className="text-white">
-                <tr>
-                  <th className="p-3 text-center font-bold bg-foreground">
-                    Time
-                  </th>
-                  <th className="p-3 text-center font-bold bg-foreground">
-                    Activity
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="text-foreground">
-                <ScheduleItem time="8:00 - 8:30 AM" activity="Registration" />
-                <ScheduleItem
-                  time="8:30 - 9:00 AM"
-                  activity="Opening Ceremony"
-                />
-                <ScheduleItem time="9:00 - 9:30 AM" activity="First Speaker" />
-                <ScheduleItem
-                  time="9:30 - 10:00 AM"
-                  activity="Second Speaker"
-                />
-                <ScheduleItem
-                  time="10:00 - 10:30 AM"
-                  activity="Third Speaker"
-                />
-                <ScheduleItem
-                  time="10:30 - 11:00 AM"
-                  activity="Workshop on Ideation"
-                />
-                <ScheduleItem
-                  time="11:00 - 11:30 AM"
-                  activity="Workshop on Project Pitching"
-                />
-                <ScheduleItem time="11:30 - 12:00 PM" activity="Pretotyping" />
-                <ScheduleItem
-                  time="12:00 - 1:00 PM"
-                  activity="Team Formation & Lunch"
-                />
-                <ScheduleItem
-                  time="1:00 - 2:00 PM"
-                  activity="Initial Project Planning"
-                />
-                <ScheduleItem time="2:00 - 3:00 PM" activity="Work Session" />
-                <ScheduleItem
-                  time="3:00 - 3:30 PM"
-                  activity="Coffee, Networking Break, and Mentorship"
-                />
-                <ScheduleItem time="3:30 - 4:30 PM" activity="Work Session" />
-                <ScheduleItem
-                  time="4:30 - 5:00 PM"
-                  activity="Check-in & Mentorship"
-                />
-                <ScheduleItem time="5:00 - 6:30 PM" activity="Work Session" />
-                <ScheduleItem time="6:30 - 8:00 PM" activity="Dinner Break" />
-                <ScheduleItem
-                  time="8:00 PM - Overnight"
-                  activity="Night Work Session"
-                />
-              </tbody>
-            </table>
-          </div>
-        );
-      case "day2":
-        return (
-          <div className="w-full overflow-x-auto overflow-y-auto max-h-96">
-            <table className="w-full text-lg border-collapse">
-              <thead className="text-white">
-                <tr>
-                  <th className="p-3 text-center font-bold bg-foreground">
-                    Time
-                  </th>
-                  <th className="p-3 text-center font-bold bg-foreground">
-                    Activity
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="text-foreground">
-                <ScheduleItem
-                  time="8:00 - 9:00 AM"
-                  activity="Breakfast & Morning Check-in"
-                />
-                <ScheduleItem
-                  time="9:00 - 11:30 AM"
-                  activity="Final Work Session"
-                />
-                <ScheduleItem
-                  time="11:30 - 12:00 PM"
-                  activity="Requirements Submission"
-                />
-                <ScheduleItem time="12:00 - 1:00 PM" activity="Lunch Break" />
-                <ScheduleItem
-                  time="2:00 - 5:00 PM"
-                  activity="Pitching to Judges"
-                />
-                <ScheduleItem
-                  time="5:00 - 6:00 PM"
-                  activity="Judges Deliberation & Networking"
-                />
-                <ScheduleItem
-                  time="6:00 - 8:00 PM"
-                  activity="Dinner Party and Awarding Ceremony"
-                />
-              </tbody>
-            </table>
-          </div>
-        );
-      default:
-        return null;
-    }
-  };
 
   return (
     <div
@@ -166,7 +86,29 @@ const Schedules: React.FC = () => {
         </div>
       </div>
       <div className="w-full max-w-3xl mx-auto rounded-lg shadow-lg bg-white">
-        {renderContent()}
+        <div className="w-full overflow-x-auto overflow-y-auto max-h-96">
+          <table className="w-full text-lg border-collapse">
+            <thead className="text-white">
+              <tr>
+                <th className="p-3 text-center font-bold bg-foreground">
+                  Time
+                </th>
+                <th className="p-3 text-center font-bold bg-foreground">
+                  Activity
+                </th>
+              </tr>
+            </thead>
+            <tbody className="text-foreground">
+              {schedules[activeTab].map((schedule, index) => (
+                <ScheduleItem
+                  key={index}
+                  time={schedule.time}
+                  activity={schedule.activity}
+                />
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );
