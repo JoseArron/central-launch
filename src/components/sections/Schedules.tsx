@@ -65,7 +65,7 @@ const Schedules: React.FC = () => {
             <img
               src="/assets/active.png"
               alt="Active Tab Image"
-              className="absolute top-4 left-0 w-full max-w-xs mx-auto object-cover"
+              className="absolute top-5 left-0 w-full max-w-xs mx-auto object-cover"
             />
           )}
         </div>
@@ -80,17 +80,17 @@ const Schedules: React.FC = () => {
             <img
               src="/assets/active.png"
               alt="Active Tab Image"
-              className="absolute top-4 left-0 w-full max-w-xs mx-auto object-cover"
+              className="absolute top-5 left-0 w-full max-w-xs mx-auto object-cover"
             />
           )}
         </div>
       </div>
-      <div className="w-full max-w-3xl mx-auto rounded-lg shadow-lg bg-white">
+      <div className="w-full max-w-3xl mx-auto shadow-lg bg-white rounded-lg overflow-hidden">
         <div className="w-full overflow-x-auto overflow-y-auto max-h-96">
-          <table className="w-full text-lg border-collapse">
-            <thead className="text-white">
+          <table className="w-full text-lg border-collapse ">
+            <thead className="text-white sticky top-0 bg-foreground">
               <tr>
-                <th className="p-3 text-center font-bold bg-foreground">
+                <th className="p-3 text-center font-bold bg-foreground min-w-[100px]">
                   Time
                 </th>
                 <th className="p-3 text-center font-bold bg-foreground">
