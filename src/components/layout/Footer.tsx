@@ -37,7 +37,7 @@ const Footer = () => {
   return (
     <footer
       ref={ref}
-      className="relative flex flex-col w-full h-[60vh] md:h-[90vh] lg:h-[100vh] text-foreground text-center overflow-hidden pt-12"
+      className="relative flex flex-col w-full h-[50vh] sm:h-[60vh] md:h-[80vh] lg:h-[100vh] text-foreground text-center overflow-hidden pt-4 md:pt-12 z-10"
     >
       <div className="flex flex-col gap-6 items-center z-10">
         <WavyText
