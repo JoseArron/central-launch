@@ -6,6 +6,7 @@ import Track from "../Track";
 import { motion, useScroll, useTransform } from "motion/react";
 import cloud from "@/../public/assets/cloud.svg";
 import { useRef } from "react";
+import WavyText from "../WavyText";
 
 const appearVariants = {
   hidden: {
@@ -111,7 +112,10 @@ export default function About() {
         viewport={{ once: true }}
         className="text-center self-center"
       >
-        <h1>About</h1>
+        <WavyText
+          text={"About"}
+          className="text-white text-4xl font-medium bg-foreground p-4 rounded-full max-w-fit justify-self-center mb-4"
+        />
         <h3 className="max-w-md self-center">
           A two-day immersive experience for Centralian students to ideate,
           develop, and pitch startup ideas.

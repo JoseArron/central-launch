@@ -49,39 +49,4 @@ body {
   .text-balance {
     text-wrap: balance;
   }
-  .text-stroke-sky-1 {
-    text-shadow:
-      1px 1px 0 var(--background),
-      -1px -1px 0 var(--background),
-      1px -1px 0 var(--background),
-      -1px 1px 0 var(--background);
-  }
-  .text-stroke-sky-2 {
-    text-shadow:
-      2px 2px 0 var(--background),
-      -2px -2px 0 var(--background),
-      2px -2px 0 var(--background),
-      -2px 2px 0 var(--background);
-  }
-  .text-stroke-sky-3 {
-    text-shadow:
-      3px 3px 0 var(--background),
-      -3px -3px 0 var(--background),
-      3px -3px 0 var(--background),
-      -3px 3px 0 var(--background);
-  }
-  .text-stroke-sky-4 {
-    text-shadow:
-      4px 4px 0 var(--background),
-      -4px -4px 0 var(--background),
-      4px -4px 0 var(--background),
-      -4px 4px 0 var(--background);
-  }
-  .text-stroke-sky-5 {
-    text-shadow:
-      5px 5px 0 var(--background),
-      -5px -5px 0 var(--background),
-      5px -5px 0 var(--background),
-      -5px 5px 0 var(--background);
-  }
 }

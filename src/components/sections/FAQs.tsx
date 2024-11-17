@@ -1,4 +1,5 @@
 import FAQ from "../FAQ";
+import WavyText from "../WavyText";
 
 type FaqsProps = {
   question: string;
@@ -27,9 +28,12 @@ export default function FAQs() {
   return (
     <div
       id="faqs"
-      className="flex flex-col items-center justify-center py-12 px-4 md:px-12 lg:px-24 xl:px-36 w-full gap-5"
+      className="flex flex-col items-center justify-center py-12 px-4 md:px-12 lg:px-24 xl:px-36 w-full gap-5 z-10"
     >
-      <h1>FAQs</h1>
+      <WavyText
+        text={"FAQs"}
+        className="text-white text-4xl font-medium bg-foreground p-4 rounded-full max-w-fit justify-self-center mb-4"
+      />
       <div className="flex flex-col gap-4 items-center justify-center w-full max-w-screen-sm">
         {faqs.map(({ question, answer }, idx) => (
           <FAQ question={question} answer={answer} key={idx} />
