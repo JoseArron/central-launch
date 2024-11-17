@@ -63,7 +63,7 @@ const Footer = () => {
         className={`absolute inset-x-0 bottom-0 w-full aspect-[1519/1080] bg-[url('/assets/footer-nest.png')] bg-cover bg-no-repeat`}
       ></motion.div>
       <WavyText
-        text="Made with ❤︎ by the Central Launch Team"
+        text="Made with ❤︎ by the Launch Central Team"
         className="bg-foreground rounded-full px-4 py-2 absolute text-white text-base md:text-xl lg:text-2xl z-20 bottom-8 left-1/2 -translate-x-1/2 text-nowrap"
       />
     </footer>
