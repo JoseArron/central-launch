@@ -52,7 +52,7 @@ export default function About() {
       <div className="-z-10 overflow-hidden">
         <motion.div
           style={{ y: cloudY }}
-          className="absolute w-40 h-40 md:w-40 md:h-40 left-10 top-0 md:left-32"
+          className="absolute w-40 h-40 md:w-40 md:h-40 left-10 -top-10 md:top-0  md:left-32"
         >
           <Image fill src={cloud} alt="img" className="object-contain" />
         </motion.div>
@@ -70,7 +70,7 @@ export default function About() {
         </motion.div>
         <motion.div
           style={{ y: cloud4Y }}
-          className="absolute w-64 h-64 top-1/2 -translate-y-1/2"
+          className="absolute w-64 h-64 top-[47%] md:top-1/2 -translate-y-1/2"
         >
           <Image fill src={cloud} alt="img" className="object-contain" />
         </motion.div>
@@ -114,22 +114,23 @@ export default function About() {
       >
         <WavyText
           text={"About"}
-          className="text-white text-4xl font-medium bg-foreground p-4 rounded-full max-w-fit justify-self-center mb-4"
+          className="text-white text-4xl font-medium bg-foreground p-4 rounded-full justify-self-center mb-4"
         />
         <h3 className="max-w-md self-center">
           A two-day immersive experience for Centralian students to ideate,
           develop, and pitch startup ideas.
         </h3>
       </motion.div>
-      <div className="relative">
+      <div className="relative flex flex-col items-center">
         <h1 className="text-center py-5">What&apos;s in it for you?</h1>
         <div className="relative text-white">
-          <Circle className="justify-center w-72 h-72 px-10">
+          <Circle className="justify-center w-44 h-44 md:w-72 md:h-72 px-10">
             <motion.h2
               initial="hidden"
               whileInView="visible"
               variants={appearVariants}
               viewport={{ once: true }}
+              className="text-base md:text-2xl"
             >
               Chance to represent CPU for an international startup conference
             </motion.h2>
@@ -144,32 +145,32 @@ export default function About() {
               viewport={{ once: true }}
             >
               <motion.div variants={appearStagger}>
-                <Circle className="absolute w-24 h-24 top-12 -left-28">
+                <Circle className="absolute w-24 h-24 top-0 md:top-12 -left-24">
                   <p>Food</p>
                 </Circle>
               </motion.div>
               <motion.div variants={appearStagger}>
-                <Circle className="absolute -left-16 bottom-0">
+                <Circle className="absolute -left-24 md:-left-16 top-32 md:bottom-0">
                   <p>Pitching</p>
                 </Circle>
               </motion.div>
               <motion.div variants={appearStagger}>
-                <Circle className="absolute -left-2 -bottom-40 w-36 h-36">
+                <Circle className="absolute -left-2 -bottom-28 w-24 h-24 md:w-36 md:h-36">
                   <p>Connections</p>
                 </Circle>
               </motion.div>
               <motion.div variants={appearStagger}>
-                <Circle className="absolute -right-10 -bottom-36 w-36 h-36">
+                <Circle className="absolute -right-10 -bottom-24 md:-bottom-36 w-20 h-20 md:w-36 md:h-36">
                   <p>Networks</p>
                 </Circle>
               </motion.div>
               <motion.div variants={appearStagger}>
-                <Circle className="absolute -right-24 bottom-5 w-24 h-24">
+                <Circle className="absolute -right-24 top-20 md:top-0 md:bottom-5 w-24 h-24 md:w-24 md:h-24">
                   <p>Workshops</p>
                 </Circle>
               </motion.div>
               <motion.div variants={appearStagger}>
-                <Circle className="absolute -right-24 top-5">
+                <Circle className="absolute -right-24 -top-4 md:top-5">
                   <p>Swag</p>
                 </Circle>
               </motion.div>

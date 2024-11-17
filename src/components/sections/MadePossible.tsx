@@ -84,7 +84,7 @@ export default function MadePossible() {
     },
   };
   return (
-    <div className="flex flex-col items-center justify-center py-12 px-20 md:px-24 lg:px-52 gap-14">
+    <div className="flex flex-col items-center justify-center py-12 px-12 md:px-24 lg:px-52 gap-14">
       <div className="w-full space-y-2">
         <h1 className="text-center">Organizers</h1>
         <motion.div
