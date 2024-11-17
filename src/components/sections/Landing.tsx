@@ -78,18 +78,20 @@ export default function Landing() {
         />
       </div>
       <motion.div
-        animate={{ y: 10 }}
-        className="flex flex-1 flex-col text-center items-center justify-center gap-10"
+        className="flex flex-1 flex-col text-center items-center justify-center sm:text-right sm:items-end gap-8 px-10 sm:px-24 md:px-36 lg:px-44 xl:px-52 pt-2 lg:pt-4"
         style={{ y: textY }}
       >
         <div>
           <WavyText
             text={"Launch Central"}
-            className="text-7xl lg:text-8xl px-4 font-semibold"
+            className="text-7xl lg:text-8xl px-4 font-semibold rounded-lg max-w-fit"
           />
           <h2 className="text-2xl md:text-3xl lg:text-4xl">
-            November 22 - 23, 2024
+            Nov 22 - 23, 2024
           </h2>
+          <h3 className="text-lg md:text-xl lg:text-2xl">
+            Henry Luce Library, American Corner
+          </h3>
         </div>
         <div className="flex flex-col justify-center gap-6">
           <WavyText

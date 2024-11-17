@@ -10,7 +10,7 @@ interface ButtonProps {
 const Button = ({ text, link }: ButtonProps) => {
   return (
     <Link
-      className="bg-foreground text-white px-8 py-4 font-bold transition-all duration-200 rounded-full hover:rotate-3 hover:scale-105 max-w-fit"
+      className="bg-foreground text-white px-4 lg:px-8 py-4 font-bold transition-all duration-200 rounded-full hover:rotate-3 hover:scale-105 max-w-fit"
       href={link && link !== "" ? link : "#"}
     >
       <WavyText text={text} className="text-4xl" />
