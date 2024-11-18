@@ -150,12 +150,12 @@ export default function About() {
                 </Circle>
               </motion.div>
               <motion.div variants={appearStagger}>
-                <Circle className="absolute -left-24 md:-left-16 top-32 md:bottom-0">
+                <Circle className="absolute -left-24 md:-left-20 top-32 md:top-40 md:bottom-0">
                   <p>Pitching</p>
                 </Circle>
               </motion.div>
               <motion.div variants={appearStagger}>
-                <Circle className="absolute -left-2 -bottom-28 w-24 h-24 md:w-36 md:h-36">
+                <Circle className="absolute -left-2 -bottom-28 md:-bottom-36 w-24 h-24 md:w-36 md:h-36">
                   <p>Connections</p>
                 </Circle>
               </motion.div>
@@ -165,7 +165,7 @@ export default function About() {
                 </Circle>
               </motion.div>
               <motion.div variants={appearStagger}>
-                <Circle className="absolute -right-24 top-20 md:top-0 md:bottom-5 w-24 h-24 md:w-24 md:h-24">
+                <Circle className="absolute -right-24 top-20 md:top-36 w-24 h-24 md:w-24 md:h-24">
                   <p>Workshops</p>
                 </Circle>
               </motion.div>
