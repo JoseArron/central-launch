@@ -42,7 +42,7 @@ const Footer = () => {
       <div className="flex flex-col gap-6 items-center z-10">
         <WavyText
           text="Create a startup with Central Launch"
-          className="text-2xl md:text-3xl lg:text-4xl"
+          className="text-2xl md:text-3xl lg:text-4xl px-8"
         />
         <Button
           text="Join the launch"
